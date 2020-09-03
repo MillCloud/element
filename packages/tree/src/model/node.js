@@ -475,7 +475,23 @@ export default class Node {
         }
       };
 
-      this.store.load(this, resolve);
+      const reject = (retry, children) => {
+        this.loaded = !retry;
+        this.loading = false;
+        this.childNodes = [];
+
+        if (!retry) {
+          this.doCreateChildren(children, defaultProps);
+        }
+
+        this.updateLeafState();
+        if (callback) {
+          callback.call(this, children);
+        }
+      };
+
+      this.store.load(this, resolve, reject);
+
     } else {
       if (callback) {
         callback.call(this);
