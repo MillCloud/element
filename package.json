@@ -1,5 +1,5 @@
 {
-  "name": "element-ui-eoi",
+  "name": "element-ui",
   "version": "2.14.3",
   "description": "A Component Library for Vue.js ( bugfix version )",
   "main": "lib/element-ui.common.js",
