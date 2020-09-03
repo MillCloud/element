@@ -62,7 +62,7 @@ export declare class ElTree<K, D extends TreeData> extends ElementUIComponent {
   props: TreeProps;
 
   /** Method for loading subtree data */
-  load: (data: D, resolve: Function) => void;
+  load: (data: D, resolve: Function, reject: Function) => void;
 
   /**
    * Render function for a specific node
