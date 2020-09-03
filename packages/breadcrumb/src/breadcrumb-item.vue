@@ -1,7 +1,7 @@
 <template>
   <span class="el-breadcrumb__item">
     <span
-      :class="['el-breadcrumb__inner', to ? 'is-link' : '']"
+      :class="['el-breadcrumb__inner', isLink || to ? 'is-link' : '']"
       ref="link"
       role="link">
       <slot></slot>
@@ -15,7 +15,8 @@
     name: 'ElBreadcrumbItem',
     props: {
       to: {},
-      replace: Boolean
+      replace: Boolean,
+      isLink: Boolean
     },
     data() {
       return {
@@ -32,9 +33,14 @@
       const link = this.$refs.link;
       link.setAttribute('role', 'link');
       link.addEventListener('click', _ => {
-        const { to, $router } = this;
-        if (!to || !$router) return;
-        this.replace ? $router.replace(to) : $router.push(to);
+        const { to, $router, isLink } = this;
+        if ((!to || !$router) && !isLink) return;
+        if (isLink) {
+          this.$emit('click');
+        } else {
+          this.replace ? $router.replace(to) : $router.push(to);
+        }
+
       });
     }
   };
