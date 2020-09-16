@@ -15,13 +15,13 @@
     name: 'ElBreadcrumbItem',
     props: {
       to: {},
-      replace: Boolean,
-      isLink: Boolean
+      replace: Boolean
     },
     data() {
       return {
         separator: '',
-        separatorClass: ''
+        separatorClass: '',
+        isLink: false
       };
     },
 
@@ -30,6 +30,7 @@
     mounted() {
       this.separator = this.elBreadcrumb.separator;
       this.separatorClass = this.elBreadcrumb.separatorClass;
+      this.isLink = this.elBreadcrumb.isLink;
       const link = this.$refs.link;
       link.setAttribute('role', 'link');
       link.addEventListener('click', _ => {

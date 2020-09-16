@@ -15,6 +15,10 @@
       separatorClass: {
         type: String,
         default: ''
+      },
+      isLink: {
+        type: Boolean,
+        default: false
       }
     },
 

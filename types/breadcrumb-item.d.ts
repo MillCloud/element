@@ -7,7 +7,4 @@ export declare class ElBreadcrumbItem extends ElementUIComponent {
 
   /** If true, the navigation will not leave a history record */
   replace: boolean
-  
-  /** If true, the item will emit a click event */
-  isLink: boolean
 }

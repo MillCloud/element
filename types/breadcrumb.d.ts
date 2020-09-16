@@ -7,4 +7,7 @@ export declare class ElBreadcrumb extends ElementUIComponent {
 
   /** Class name of the icon separator */
   separatorClass: string
+
+  /** Control by users or not */
+  isLink: boolean
 }

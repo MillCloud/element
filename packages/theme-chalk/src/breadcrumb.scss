@@ -38,8 +38,8 @@
     }
 
     &:last-child {
-      .el-breadcrumb__inner,
-      .el-breadcrumb__inner a {
+      .el-breadcrumb__inner:not([class*=link]),
+      .el-breadcrumb__inner:not([class*=link]) a {
         &, &:hover {
           font-weight: normal;
           color: $--color-text-regular;
