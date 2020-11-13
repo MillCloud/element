@@ -219,7 +219,7 @@
 
       showNewOption() {
         return this.filterable && this.allowCreate && this.query !== '' &&
-          this.options.some(option => !option.created && option.currentLabel === this.query);
+          !this.options.some(option => !option.created && option.currentLabel === this.query);
       },
 
       selectSize() {
